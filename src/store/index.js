@@ -1,5 +1,5 @@
 import createStore from "@/libs/redux";
-import rootReducer from "./reducer/reducer";
+import rootReducer from "./reducer";
 
 const loadState = () => {
   try {

@@ -63,7 +63,7 @@ const handleEdit = (todo) => {
         (t) => t.id !== modal.editTodo.id && t.title.toLowerCase() === newTitle.toLowerCase()
       )
     ) {
-      dispatch({
+        dispatch({
         type: OPEN_WARNING, payload: "This todo already exists!"
       })
       return;
@@ -134,18 +134,7 @@ const handleEdit = (todo) => {
           </ul>
         )}
        
-
-      {/* MODAL WARNING */}
-      {modal.warning && (
-        <Modal
-          title="Warning"
-          onClose={() => dispatch({ type: CLOSE_WARNING })}
-        >
-          <p>{modal.warning}</p>
-        </Modal>
-      )}
-
-      {/* MODAL DELETE */}
+       {/* MODAL DELETE */}
       {modal.deleteId && (
         <Modal
           title="Confirm Delete"
@@ -181,6 +170,16 @@ const handleEdit = (todo) => {
           >
             Save
           </button>
+        </Modal>
+      )}
+
+      {/* MODAL WARNING */}
+      {modal.warning && (
+        <Modal
+          title="Warning"
+          onClose={() => dispatch({ type: CLOSE_WARNING })}
+        >
+          <p>{modal.warning}</p>
         </Modal>
       )}
       </div>
